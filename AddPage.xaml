@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c:CirclePage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:c="clr-namespace:Tizen.Wearable.CircularUI.Forms;assembly=Tizen.Wearable.CircularUI.Forms"
+             x:Class="WakeOnLan.AddPage"
+             xmlns:local="clr-namespace:WakeOnLan"
+             xmlns:resx="clr-namespace:WakeOnLan.Resx;"
+             NavigationPage.HasNavigationBar="False">
+    <c:CirclePage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+            <Label Text="{x:Static resx:AppResources.Name}" HorizontalTextAlignment="Center"></Label>
+            <c:PopupEntry x:Name="NameField" Placeholder="{x:Static resx:AppResources.Name}" WidthRequest="260" MaxLength="25"></c:PopupEntry>
+
+            <Label Text="{x:Static resx:AppResources.MacAddress}" HorizontalTextAlignment="Center"></Label>
+            <c:PopupEntry x:Name="MacField" Placeholder="{x:Static resx:AppResources.MacAddress}" WidthRequest="260" MaxLength="17"></c:PopupEntry>
+
+            <Button Text="{x:Static resx:AppResources.Add}" HorizontalOptions="CenterAndExpand" Clicked="AddClicked"></Button>
+
+        </StackLayout>
+    </c:CirclePage.Content>
+</c:CirclePage>

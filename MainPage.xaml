@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c:CirclePage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:c="clr-namespace:Tizen.Wearable.CircularUI.Forms;assembly=Tizen.Wearable.CircularUI.Forms"
+             x:Class="WakeOnLan.MainPage"
+             xmlns:local="clr-namespace:WakeOnLan"
+             xmlns:resx="clr-namespace:WakeOnLan.Resx"
+             NavigationPage.HasNavigationBar="False"
+             RotaryFocusObject="{x:Reference PcList}">
+    <c:CirclePage.Content>
+        <StackLayout>
+            <c:CircleListView x:Name="PcList" ItemTapped="ListItemTapped">
+                <c:CircleListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HeightRequest="120">
+                                <c:Check Scale="0.8" IsToggled="{Binding Selected}"></c:Check>
+                                <StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label HorizontalTextAlignment="Center" Text="{Binding Name}"></Label>
+                                    <Label HorizontalTextAlignment="Center" FontSize="Micro" Text="{Binding MacAddress}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </c:CircleListView.ItemTemplate>
+            </c:CircleListView>
+            <StackLayout x:Name="EmptyPlaceholder" IsVisible="False" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label Text="{x:Static resx:AppResources.Empty}" HorizontalTextAlignment="Center"></Label>
+                <Button Text="{x:Static resx:AppResources.Add}" Clicked="ToolbarAddClicked"></Button>
+            </StackLayout>
+        </StackLayout>
+    </c:CirclePage.Content>
+    <c:CirclePage.ToolbarItems>
+        <ToolbarItem Text="{x:Static resx:AppResources.Add}" Icon="add.png" Clicked="ToolbarAddClicked"></ToolbarItem>
+        <ToolbarItem Text="{x:Static resx:AppResources.Delete}" Icon="delete.png" Clicked="ToolbarDeleteClicked"></ToolbarItem>
+        <ToolbarItem Text="{x:Static resx:AppResources.PowerSelected}" Icon="power.png" Clicked="ToolbarPowerClicked"></ToolbarItem>
+    </c:CirclePage.ToolbarItems>
+</c:CirclePage>

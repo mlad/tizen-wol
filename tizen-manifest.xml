@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest package="org.dm.ml.WakeOnLan" version="1.0.0" api-version="4" xmlns="http://tizen.org/ns/packages">
+    <profile name="wearable" />
+    <ui-application appid="org.dm.ml.WakeOnLan" exec="WakeOnLan.dll" multiple="false" nodisplay="false" taskmanage="true" type="dotnet" launch_mode="single">
+        <label>Wake-On-Lan</label>
+        <icon>app_icon.png</icon>
+        <metadata key="http://tizen.org/metadata/prefer_dotnet_aot" value="true" />
+        <splash-screens />
+    </ui-application>
+    <shortcut-list />
+    <privileges>
+        <privilege>http://tizen.org/privilege/internet</privilege>
+        <privilege>http://tizen.org/privilege/network.set</privilege>
+        <privilege>http://tizen.org/privilege/network.get</privilege>
+    </privileges>
+    <provides-appdefined-privileges />
+</manifest>
